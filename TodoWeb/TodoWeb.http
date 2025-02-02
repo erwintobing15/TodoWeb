@@ -1,0 +1,40 @@
+﻿@TodoWeb_HostAddress = https://localhost:44362
+
+POST {{TodoWeb_HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+  "name":"walk dog",
+  "isComplete":true
+}
+
+###
+
+GET {{TodoWeb_HostAddress}}/todoitems
+
+###
+
+GET {{TodoWeb_HostAddress}}/todoitems/complete
+
+###
+
+@id=2
+GET {{TodoWeb_HostAddress}}/todoitems/{{id}}
+
+###
+
+PUT {{TodoWeb_HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+  "id":1,
+  "name":"walk dog",
+  "isComplete":false
+}
+
+###
+
+@id=1
+DELETE {{TodoWeb_HostAddress}}/todoitems?id={{id}}
+
+###
